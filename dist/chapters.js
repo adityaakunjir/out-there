@@ -96,13 +96,13 @@
     ];
     const dialog = document.createElement('dialog');
     dialog.className = 'work-dialog';
-    dialog.innerHTML = '<button type="button" class="work-dialog-close" aria-label="Close project details">Close</button><div class="work-dialog-layout"><div class="work-dialog-visual"><img class="work-dialog-image" alt="" loading="lazy"></div><div class="work-dialog-copy"><div class="work-dialog-kicker"><span class="work-dialog-index"></span><p class="work-dialog-type"></p></div><h2 id="work-dialog-title"></h2><p class="work-dialog-description" id="work-dialog-description"></p><div class="work-dialog-facts"><div><small>The brief</small><p class="work-dialog-brief"></p></div><div><small>The build</small><p class="work-dialog-build"></p></div></div></div></div><a class="work-dialog-link" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>';
+    dialog.innerHTML = '<button type="button" class="work-dialog-close" aria-label="Close project details">Close</button><div class="work-dialog-layout"><div class="work-dialog-visual"><picture><source media="(max-width: 700px)"><img class="work-dialog-image" alt="" loading="eager"></picture></div><div class="work-dialog-copy"><div class="work-dialog-kicker"><span class="work-dialog-index"></span><p class="work-dialog-type"></p></div><h2 id="work-dialog-title"></h2><p class="work-dialog-description" id="work-dialog-description"></p><div class="work-dialog-facts"><div><small>The brief</small><p class="work-dialog-brief"></p></div><div><small>The build</small><p class="work-dialog-build"></p></div></div></div></div><a class="work-dialog-link" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>';
     dialog.setAttribute('aria-labelledby', 'work-dialog-title');
     dialog.setAttribute('aria-describedby', 'work-dialog-description');
     work.append(dialog);
     dialog.querySelector('button').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-    function openProject(index) {
+    async function openProject(index) {
       const p = projects[index];
       dialog.querySelector('h2').textContent = cards[index].querySelector('footer strong').textContent;
       dialog.querySelector('.work-dialog-type').textContent = cards[index].querySelector('footer span:last-child').textContent;
@@ -110,12 +110,14 @@
       dialog.querySelector('.work-dialog-brief').textContent = p.brief;
       dialog.querySelector('.work-dialog-build').textContent = p.build;
       const image = dialog.querySelector('.work-dialog-image');
+      const mobileSource = dialog.querySelector('.work-dialog-visual source');
       dialog.classList.toggle('no-preview', !p.image);
       dialog.querySelector('.work-dialog-index').textContent = ['I','II','III','IV','V','VI'][index] + ' / VI';
-      if (p.image) { image.src = p.image; image.alt = cards[index].querySelector('footer strong').textContent + ' website preview'; image.hidden = false; }
-      else { image.removeAttribute('src'); image.hidden = true; }
+      if (p.image) { mobileSource.srcset = p.image.replace('-mobile.jpg', '-hero.jpg'); image.src = p.image; image.alt = cards[index].querySelector('footer strong').textContent + ' website preview'; image.hidden = false; }
+      else { mobileSource.removeAttribute('srcset'); image.removeAttribute('src'); image.hidden = true; }
       const link = dialog.querySelector('.work-dialog-link');
       if (p.url) { link.href = p.url; link.style.display = 'inline-block'; } else { link.removeAttribute('href'); link.style.display = 'none'; }
+      if (p.image) await image.decode().catch(() => {});
       dialog.showModal();
     }
     workStage.addEventListener('click', event => {

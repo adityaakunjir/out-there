@@ -204,6 +204,12 @@
   background: #090909;
 }
 
+.work-dialog-visual picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .work-dialog-visual::after {
   content: '';
   position: absolute;
@@ -404,7 +410,9 @@
   color: white;
 }
 
-.contact-copy {
+.contact-email {
+  display: grid;
+  place-items: center;
   width: 100%;
   min-height: 52px;
   margin-top: 10px;
@@ -412,23 +420,15 @@
   border-radius: 99px;
   background: transparent;
   color: #f1f0eb;
-  cursor: pointer;
   font: 600 .72rem var(--mono);
   text-transform: uppercase;
   transition: background .2s, border-color .2s;
 }
 
-.contact-copy:hover,
-.contact-copy:focus-visible {
+.contact-email:hover,
+.contact-email:focus-visible {
   border-color: #aaa;
   background: #2c2c2c;
-}
-
-.contact-copy-status {
-  min-height: 1.5em;
-  margin: 8px 0 8px;
-  color: #b8b5ae;
-  font: .65rem var(--mono);
 }
 
 .contact-panel > small:last-child {
@@ -513,14 +513,14 @@
     max-height: calc(100svh - 16px);
     border: 0;
     border-radius: 10px;
-    background: #f1f0eb;
+    background: #111;
     box-shadow: 0 24px 100px #000b;
   }
 
   .work-dialog-visual {
     display: grid;
     place-items: center;
-    height: min(32svh, 275px);
+    height: min(28svh, 240px);
     padding: 0;
     background: #151515;
   }
@@ -530,11 +530,11 @@
   }
 
   .work-dialog-image {
-    width: min(46%, 175px);
+    width: 100%;
     height: 100%;
     min-height: 0;
     aspect-ratio: auto;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center top;
     border: 0;
     border-radius: 0;
@@ -544,8 +544,8 @@
   .work-dialog-copy {
     padding: 24px 26px 92px;
     border-top: 2px solid #ff3b30;
-    background: #f1f0eb;
-    color: #111;
+    background: #151515;
+    color: #f1f0eb;
   }
 
   .work-dialog-type {
@@ -555,12 +555,12 @@
   .work-dialog h2 {
     margin: 18px 0 10px;
     font-size: clamp(2.15rem, 10vw, 3rem);
-    color: #111;
+    color: #f1f0eb;
   }
 
   .work-dialog-description {
     margin: 0;
-    color: #282724;
+    color: #e6e4df;
     font-size: 1rem !important;
     line-height: 1.4;
     font-weight: 600;
@@ -569,21 +569,21 @@
   .work-dialog-facts {
     gap: 0;
     margin-top: 18px;
-    border-top-color: #c6c3bb;
+    border-top-color: #454545;
   }
 
   .work-dialog-facts > div {
     padding-top: 14px;
-    border-bottom-color: #c6c3bb;
+    border-bottom-color: #454545;
   }
 
   .work-dialog-facts small {
-    color: #cc3027;
+    color: #ff6259;
   }
 
   .work-dialog-facts p {
     margin-bottom: 14px;
-    color: #47453f;
+    color: #bbb9b3;
     font-size: .89rem;
   }
 
@@ -598,7 +598,8 @@
     margin: -58px 0 0;
     padding: 18px 20px;
     border-radius: 0;
-    background: #111;
+    border-top: 1px solid #4a4a4a;
+    background: #202020;
     color: #f1f0eb;
     font-weight: 700;
     text-align: center;
@@ -665,4 +666,53 @@
   .hero-pitch a {
     transition: none;
   }
+}
+
+@media (max-width: 799px) {
+  .hero-pitch a { min-height: 44px; font-size: .65rem; }
+  .craft { padding-top: 4rem; padding-bottom: 2rem; }
+  .manifesto { max-width: 22ch; margin-bottom: 1.5rem; font-size: clamp(1.65rem, 7.2vw, 2.25rem); line-height: 1.14; }
+  .craft-stage { height: 88svh; min-height: 0; }
+  .metrics { margin-top: 72svh; }
+  .metrics article { min-height: 100px; padding: 12px; }
+  .metrics strong { font-size: 1.65rem; }
+  .work { height: 190svh; }
+  .work-card { top: 25%; width: min(68vw, 285px); height: min(38svh, 330px); border-radius: 12px; }
+  .client-shot-summary { font-size: .9rem; }
+  .work-count strong { font-size: 2.8rem; }
+  .signature { height: 145svh; }
+  .process { padding-top: 4.5rem; }
+  .process-track article, .process-track article:first-child, .process-track article:nth-child(3) { flex-basis: min(72vw, 295px); width: min(72vw, 295px); min-height: 0; padding: 16px; }
+  .process-track h3 { font-size: clamp(1.55rem, 7vw, 2rem); margin: .75rem 0 .5rem; }
+  .process-track p { font-size: .82rem; margin-bottom: .7rem; }
+  .process-track ul { font-size: .61rem; }
+  .process-track li { padding: 4px 0; }
+  .process-art { height: 42px; margin-top: 8px; }
+  .studio { padding: 4rem 4vw 3rem; }
+  .studio h2 { font-size: clamp(2.3rem, 10vw, 3rem); }
+  .studio-lead { font-size: .9rem; line-height: 1.4; }
+  .ot-stage { height: 300px; }
+  .ot-slide img { height: 230px; }
+  .engagements { padding: 3.5rem 4vw 3rem; }
+  .eng-head h2 { font-size: clamp(2.4rem, 10vw, 3rem); }
+  .eng-grid { margin-top: 2rem; }
+  .eng-grid article, .eng-grid article.chosen { flex-basis: min(78vw, 300px); min-height: 0; padding: 17px; }
+  .eng-grid h3 { font-size: 1.55rem; margin: 8px 0 12px; }
+  .eng-grid p { font-size: .88rem; line-height: 1.4; }
+  .eng-grid ul { margin: auto 0 14px; font-size: .65rem; line-height: 1.5; }
+  .eng-grid li { padding: 4px 0; }
+  .faq { padding: 3rem 4vw; }
+  .faq-intro h2 { font-size: clamp(2.3rem, 10vw, 3rem); }
+  .faq summary { padding: 15px 0; }
+  .faq details p { font-size: .9rem; }
+  .contact { padding: 4rem 4vw 5rem; }
+  .contact-content { gap: 24px; }
+  .contact h2 { font-size: clamp(3.5rem, 14vw, 4.5rem); }
+  .contact-panel { padding: 22px; }
+  .contact-panel h3 { font-size: 2rem; }
+  .contact-panel p { margin-bottom: 24px; }
+}
+
+@media (max-width: 600px) {
+  .word-bottom { bottom: 18%; }
 }

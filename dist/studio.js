@@ -159,26 +159,6 @@
   face.className='contact-button-face';
   face.textContent=button.textContent;
   button.replaceChildren(face);
-  const copyButton=contact.querySelector('.contact-copy');
-  const copyStatus=contact.querySelector('.contact-copy-status');
-  copyButton?.addEventListener('click',async()=>{
-    let copied=false;
-    try{
-      await navigator.clipboard.writeText(copyButton.dataset.email);
-      copied=true;
-    }catch{
-      const field=document.createElement('textarea');
-      field.value=copyButton.dataset.email;
-      field.style.position='fixed';
-      field.style.opacity='0';
-      document.body.append(field);
-      field.select();
-      copied=document.execCommand('copy');
-      field.remove();
-    }
-    copyStatus.textContent=copied?'Email address copied.':'Could not copy the email address.';
-    if(copied)copyButton.textContent='Email copied ✓';
-  });
   let frame=0;
   let fieldX=0,fieldY=0,magnetX=0,magnetY=0;
   function paint(){
