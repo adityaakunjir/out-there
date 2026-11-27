@@ -1,0 +1,86 @@
+[
+  {
+    "name": "desktop",
+    "domContentLoaded": 239.89999997615814,
+    "load": 243,
+    "resources": 30,
+    "transfer": 1181538,
+    "largest": [
+      {
+        "name": "three.min.js",
+        "transfer": 670184,
+        "duration": 37.199999928474426
+      },
+      {
+        "name": "signature.mesh",
+        "transfer": 130880,
+        "duration": 3.5
+      },
+      {
+        "name": "gsap.min.js",
+        "transfer": 72735,
+        "duration": 25.799999952316284
+      },
+      {
+        "name": "inter.woff2",
+        "transfer": 48556,
+        "duration": 70.89999997615814
+      },
+      {
+        "name": "ScrollTrigger.min.js",
+        "transfer": 44457,
+        "duration": 26.899999976158142
+      }
+    ],
+    "metrics": {
+      "Nodes": 702,
+      "LayoutCount": 3,
+      "RecalcStyleCount": 32,
+      "ScriptDuration": 0.034396,
+      "TaskDuration": 1.652574,
+      "JSHeapUsedSize": 4999684
+    }
+  },
+  {
+    "name": "mobile",
+    "domContentLoaded": 239.10000002384186,
+    "load": 239.70000004768372,
+    "resources": 30,
+    "transfer": 1181538,
+    "largest": [
+      {
+        "name": "three.min.js",
+        "transfer": 670184,
+        "duration": 46.300000071525574
+      },
+      {
+        "name": "signature.mesh",
+        "transfer": 130880,
+        "duration": 2.600000023841858
+      },
+      {
+        "name": "gsap.min.js",
+        "transfer": 72735,
+        "duration": 28.800000071525574
+      },
+      {
+        "name": "inter.woff2",
+        "transfer": 48556,
+        "duration": 76.70000004768372
+      },
+      {
+        "name": "ScrollTrigger.min.js",
+        "transfer": 44457,
+        "duration": 29.899999976158142
+      }
+    ],
+    "metrics": {
+      "Nodes": 811,
+      "LayoutCount": 1,
+      "RecalcStyleCount": 47,
+      "ScriptDuration": 0.035857,
+      "TaskDuration": 0.850041,
+      "JSHeapUsedSize": 6008864
+    }
+  }
+]

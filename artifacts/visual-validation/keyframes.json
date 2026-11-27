@@ -1,0 +1,142 @@
+[
+  {
+    "chapter": "craft",
+    "progress": 0,
+    "y": 900
+  },
+  {
+    "chapter": "craft",
+    "progress": 0.1,
+    "y": 1008
+  },
+  {
+    "chapter": "craft",
+    "progress": 0.25,
+    "y": 1170
+  },
+  {
+    "chapter": "craft",
+    "progress": 0.5,
+    "y": 1440
+  },
+  {
+    "chapter": "craft",
+    "progress": 0.75,
+    "y": 1710
+  },
+  {
+    "chapter": "craft",
+    "progress": 0.9,
+    "y": 1872
+  },
+  {
+    "chapter": "craft",
+    "progress": 1,
+    "y": 1980
+  },
+  {
+    "chapter": "work",
+    "progress": 0,
+    "y": 2880
+  },
+  {
+    "chapter": "work",
+    "progress": 0.1,
+    "y": 2988
+  },
+  {
+    "chapter": "work",
+    "progress": 0.25,
+    "y": 3150
+  },
+  {
+    "chapter": "work",
+    "progress": 0.5,
+    "y": 3420
+  },
+  {
+    "chapter": "work",
+    "progress": 0.75,
+    "y": 3690
+  },
+  {
+    "chapter": "work",
+    "progress": 0.9,
+    "y": 3852
+  },
+  {
+    "chapter": "work",
+    "progress": 1,
+    "y": 3960
+  },
+  {
+    "chapter": "signature",
+    "progress": 0,
+    "y": 4860
+  },
+  {
+    "chapter": "signature",
+    "progress": 0.1,
+    "y": 4968
+  },
+  {
+    "chapter": "signature",
+    "progress": 0.25,
+    "y": 5130
+  },
+  {
+    "chapter": "signature",
+    "progress": 0.5,
+    "y": 5400
+  },
+  {
+    "chapter": "signature",
+    "progress": 0.75,
+    "y": 5670
+  },
+  {
+    "chapter": "signature",
+    "progress": 0.9,
+    "y": 5832
+  },
+  {
+    "chapter": "signature",
+    "progress": 1,
+    "y": 5940
+  },
+  {
+    "chapter": "process",
+    "progress": 0,
+    "y": 6840
+  },
+  {
+    "chapter": "process",
+    "progress": 0.1,
+    "y": 7088
+  },
+  {
+    "chapter": "process",
+    "progress": 0.25,
+    "y": 7460
+  },
+  {
+    "chapter": "process",
+    "progress": 0.5,
+    "y": 8080
+  },
+  {
+    "chapter": "process",
+    "progress": 0.75,
+    "y": 8700
+  },
+  {
+    "chapter": "process",
+    "progress": 0.9,
+    "y": 9072
+  },
+  {
+    "chapter": "process",
+    "progress": 1,
+    "y": 9320
+  }
+]

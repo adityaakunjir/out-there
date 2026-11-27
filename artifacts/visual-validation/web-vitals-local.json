@@ -1,0 +1,18 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 900,
+    "lcp": 148,
+    "cls": 0.01883095384971922,
+    "longTasks": 1
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "lcp": 168,
+    "cls": 0,
+    "longTasks": 1
+  }
+]

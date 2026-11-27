@@ -1,0 +1,138 @@
+{
+  "pc-1440x900": {
+    "errors": [],
+    "sections": {
+      "hero": {
+        "top": 0,
+        "height": 900,
+        "bottom": 900
+      },
+      "craft": {
+        "top": 900,
+        "height": 2531,
+        "bottom": 3431
+      },
+      "metrics": {
+        "top": 3209,
+        "height": 180,
+        "bottom": 3389
+      },
+      "work": {
+        "top": 3431,
+        "height": 1980,
+        "bottom": 5411
+      },
+      "signature": {
+        "top": 5411,
+        "height": 1980,
+        "bottom": 7391
+      },
+      "process": {
+        "top": 7391,
+        "height": 1746,
+        "bottom": 9137
+      },
+      "studio": {
+        "top": 9137,
+        "height": 1145,
+        "bottom": 10282
+      },
+      "studies": {
+        "top": 10281,
+        "height": 1129,
+        "bottom": 11410
+      },
+      "engagements": {
+        "top": 11411,
+        "height": 970,
+        "bottom": 12381
+      },
+      "faq": {
+        "top": 12381,
+        "height": 669,
+        "bottom": 13050
+      },
+      "contact": {
+        "top": 13050,
+        "height": 810,
+        "bottom": 13860
+      },
+      "footer": {
+        "top": 4119,
+        "height": 585,
+        "bottom": 4704
+      },
+      "docHeight": 14445,
+      "scrollWidth": 1440,
+      "innerWidth": 1440
+    }
+  },
+  "mobile-390x844": {
+    "errors": [],
+    "sections": {
+      "hero": {
+        "top": 0,
+        "height": 844,
+        "bottom": 844
+      },
+      "craft": {
+        "top": 844,
+        "height": 2425,
+        "bottom": 3269
+      },
+      "metrics": {
+        "top": 2995,
+        "height": 256,
+        "bottom": 3251
+      },
+      "work": {
+        "top": 3269,
+        "height": 1857,
+        "bottom": 5126
+      },
+      "signature": {
+        "top": 5126,
+        "height": 1688,
+        "bottom": 6814
+      },
+      "process": {
+        "top": 6814,
+        "height": 1926,
+        "bottom": 8740
+      },
+      "studio": {
+        "top": 8740,
+        "height": 903,
+        "bottom": 9643
+      },
+      "studies": {
+        "top": 9642,
+        "height": 851,
+        "bottom": 10493
+      },
+      "engagements": {
+        "top": 10494,
+        "height": 763,
+        "bottom": 11257
+      },
+      "faq": {
+        "top": 11256,
+        "height": 822,
+        "bottom": 12078
+      },
+      "contact": {
+        "top": 12078,
+        "height": 540,
+        "bottom": 12618
+      },
+      "footer": {
+        "top": 3781,
+        "height": 60,
+        "bottom": 3841
+      },
+      "docHeight": 13156,
+      "scrollWidth": 390,
+      "innerWidth": 390
+    }
+  }
+}

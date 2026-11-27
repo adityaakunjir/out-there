@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Out There">
+  <rect width="64" height="64" rx="15" fill="#111111"/>
+  <path d="M36 14a18 18 0 1 0 11 13" fill="none" stroke="#F1F0EB" stroke-width="8" stroke-linecap="round"/>
+  <path d="M41 13h12v12h-7v-5h-5z" fill="#FF4A38"/>
+  <circle cx="48" cy="15" r="3" fill="#5C50E8"/>
+</svg>

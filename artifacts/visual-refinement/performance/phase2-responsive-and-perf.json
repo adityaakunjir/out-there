@@ -1,0 +1,131 @@
+{
+  "vpReport": [
+    {
+      "name": "desktop-2560x1440",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 2560,
+      "innerWidth": 2560,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "desktop-1920x1080",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 1920,
+      "innerWidth": 1920,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "desktop-1440x900",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "desktop-1366x768",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 1366,
+      "innerWidth": 1366,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "desktop-1280x800",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 1280,
+      "innerWidth": 1280,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "tablet-1024x768",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 1024,
+      "innerWidth": 1024,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "tablet-768x1024",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "craftMid": "03 / 07 — DEVELOPMENT",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "mobile-430x932",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 430,
+      "innerWidth": 430,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "mobile-414x896",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 414,
+      "innerWidth": 414,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "mobile-390x844",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "mobile-375x812",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    },
+    {
+      "name": "mobile-360x800",
+      "errs": [],
+      "overflow": false,
+      "scrollWidth": 360,
+      "innerWidth": 360,
+      "craftMid": "04 / 07 — MOTION",
+      "craftBack": "01 / 07 — STRATEGY",
+      "heroOpacity": "1"
+    }
+  ],
+  "perf": {
+    "domContentLoadedMs": 377,
+    "loadEventMs": 380,
+    "fcpMs": 200,
+    "avgScrollFrameMs": 100.77,
+    "maxScrollFrameMs": 150
+  }
+}
