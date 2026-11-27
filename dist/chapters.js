@@ -86,12 +86,12 @@
     });
 
     const projects = [
-      { desc: 'Travel discovery and booking website designed and built for Shree Vandana Tours & Travels—giving their customers a fast, clear way to explore packages and enquire directly.', url: 'https://shreevandanatoursandtravels.com' },
-      { desc: 'Modern wellness storefront designed and shipped for Inovexa—built around clean product storytelling, mobile speed, and frictionless browsing.', url: 'https://inovexaaa.vercel.app' },
-      { desc: 'Interactive agency website engineered for Two Dots Media—crafted to showcase their creative work with sharp typography and smooth motion.', url: 'https://stagging.twodotsmedia.in' },
-      { desc: 'Technology studio website designed and developed for Vadsoft—positioning their engineering capabilities with clear hierarchy and a fast, responsive build.', url: 'https://vadsoft.tech' },
-      { desc: 'Product and builder platform web experience shipped for Build by Vadsoft—structured for clarity, trust, and strong organic search foundations.', url: 'https://build.vadsoft.tech' },
-      { desc: 'In-house R&D: AI video generation workflows, automated PDF template pipelines, creative image/video editing, and custom business automations.', url: '' }
+      { desc: 'Travel discovery and booking site for Shree Vandana Tours & Travels—built so travelers can scan packages and enquire in two taps.', url: 'https://shreevandanatoursandtravels.com' },
+      { desc: 'Modern wellness storefront for Inovexa—clean product storytelling, fast mobile loads, and zero clutter between browsing and checkout.', url: 'https://inovexaaa.vercel.app' },
+      { desc: 'Interactive agency site for Two Dots Media—sharp typography, smooth scroll choreography, and a portfolio that sells their craft.', url: 'https://stagging.twodotsmedia.in' },
+      { desc: 'Tech studio website for Vadsoft—clear service positioning, crisp hierarchy, and a responsive build that loads fast.', url: 'https://vadsoft.tech' },
+      { desc: 'Product and builder platform for Build by Vadsoft—structured for clarity, trust, and clean organic search visibility.', url: 'https://build.vadsoft.tech' },
+      { desc: 'Our internal lab: automated AI video runs, dynamic PDF template engines, creative image/video editing, and workflow glue.', url: '' }
     ];
     const dialog = document.createElement('dialog');
     dialog.className = 'work-dialog';
