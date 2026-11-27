@@ -2,18 +2,11 @@
   const studio = document.querySelector('.studio');
   if (!studio) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const letters = n => String(n + 1).padStart(2, '0');
+  const letters = n => ['I','II','III'][n];
   const wrap = (n, length) => (n % length + length) % length;
-  const drawings = [
-    ['orbit','Orbit','A fluted loop in sage.'],
-    ['pleat','Pleat','Folded planes in slate.'],
-    ['signal','Signal','A twisting vermilion ribbon.'],
-    ['contour','Contour','A scalloped ring in lavender.'],
-    ['interval','Interval','Accordion folds in rose.']
-  ];
   const oldArc = studio.querySelector('.role-arc');
   const disciplines = [...oldArc.children].map((card,i) => [
-    ['direction','product','development'][i],card.querySelector('h3').textContent,card.querySelector('p').textContent
+    ['design-engineering','seo-distribution','systems-pipelines'][i],card.querySelector('h3').textContent,card.querySelector('p').textContent
   ]);
   function createGallery(items, mode, label, initial) {
     const gallery = document.createElement('div');
@@ -34,8 +27,8 @@
       figure.setAttribute('aria-label', (i+1) + ' of ' + n + ', ' + title);
       figure.innerHTML = '<img loading="lazy" decoding="async" draggable="false" width="576" height="720"><figcaption><strong></strong><small></small></figcaption>';
       const img = figure.querySelector('img');
-      img.src = 'assets/studies/' + file + '.webp';
-      img.alt = mode === 'arc' ? 'Original sculptural study for ' + title.toLowerCase() : detail;
+      img.src = 'assets/studio/' + file + '.svg';
+      img.alt = title + ' illustration';
       figure.querySelector('strong').textContent = title;
       figure.querySelector('small').textContent = detail;
       stage.append(figure);
@@ -144,12 +137,6 @@
     return gallery;
   }
   oldArc.replaceWith(createGallery(disciplines,'arc','Studio disciplines',1));
-  const collection = document.createElement('section');
-  collection.className='ot-collection';
-  collection.id='studies';
-  collection.innerHTML='<header><span>Studio experiments</span><h2>Material studies.</h2><p>Five explorations in form, light and surface from our studio.</p></header>';
-  collection.append(createGallery(drawings,'cylinder','Original material studies',0));
-  studio.after(collection);
   const engagements=document.querySelector('.engagements');
   engagements.querySelector('.chosen em')?.remove();
   const faq=document.querySelector('.faq');faq.id='faq';
@@ -158,7 +145,7 @@
   field.className='ot-type-field';field.setAttribute('aria-hidden','true');
   for(let i=0;i<15;i++){
     const line=document.createElement('b');
-    line.textContent='LET’S BUILD IT';
+    line.textContent='OUT THERE';
     const col=i%5,row=Math.floor(i/5);
     line.style.left=(col*25+(row%2?4:-6))+'%';
     line.style.top=(7+row*34+(col%2?8:0))+'%';
@@ -172,6 +159,26 @@
   face.className='contact-button-face';
   face.textContent=button.textContent;
   button.replaceChildren(face);
+  const copyButton=contact.querySelector('.contact-copy');
+  const copyStatus=contact.querySelector('.contact-copy-status');
+  copyButton?.addEventListener('click',async()=>{
+    let copied=false;
+    try{
+      await navigator.clipboard.writeText(copyButton.dataset.email);
+      copied=true;
+    }catch{
+      const field=document.createElement('textarea');
+      field.value=copyButton.dataset.email;
+      field.style.position='fixed';
+      field.style.opacity='0';
+      document.body.append(field);
+      field.select();
+      copied=document.execCommand('copy');
+      field.remove();
+    }
+    copyStatus.textContent=copied?'Email address copied.':'Could not copy the email address.';
+    if(copied)copyButton.textContent='Email copied ✓';
+  });
   let frame=0;
   let fieldX=0,fieldY=0,magnetX=0,magnetY=0;
   function paint(){

@@ -36,7 +36,7 @@
         el.classList.toggle('selected', i === selected);
         el.setAttribute('aria-hidden', String(i !== selected));
       });
-      readout.textContent = String(selected + 1).padStart(2, '0') + ' / 07 — ' + labels[selected];
+      readout.textContent = ['I','II','III','IV','V','VI','VII'][selected] + ' / VII — ' + labels[selected];
     }
     arrange(0);
     if (reduced.matches) {
@@ -78,24 +78,27 @@
   const work = document.querySelector('.work');
   const workStage = document.querySelector('.work-stage');
   if (work && workStage && cards.length) {
-    workStage.querySelectorAll('[data-work-step]').forEach(button => button.addEventListener('click', () => { const current = Number(document.querySelector('.work-count strong').textContent) - 1; window.setWorkActive((current + Number(button.dataset.workStep) + cards.length) % cards.length); }));
+    workStage.querySelectorAll('[data-work-step]').forEach(button => button.addEventListener('click', () => { const current = Number(document.querySelector('.work-count').dataset.index); window.setWorkActive((current + Number(button.dataset.workStep) + cards.length) % cards.length); }));
     cards.forEach((card, i) => {
       card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', 'View project ' + (i + 1));
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-haspopup', 'dialog');
       card.addEventListener('focus', () => window.setWorkActive(i));
     });
 
     const projects = [
-      { desc: 'Travel discovery and booking site for Shree Vandana Tours & Travels—built so travelers can scan packages and enquire in two taps.', url: 'https://shreevandanatoursandtravels.com' },
-      { desc: 'Modern wellness storefront for Inovexa—clean product storytelling, fast mobile loads, and zero clutter between browsing and checkout.', url: 'https://inovexaaa.vercel.app' },
-      { desc: 'Interactive agency site for Two Dots Media—sharp typography, smooth scroll choreography, and a portfolio that sells their craft.', url: 'https://stagging.twodotsmedia.in' },
-      { desc: 'Tech studio website for Vadsoft—clear service positioning, crisp hierarchy, and a responsive build that loads fast.', url: 'https://vadsoft.tech' },
-      { desc: 'Product and builder platform for Build by Vadsoft—structured for clarity, trust, and clean organic search visibility.', url: 'https://build.vadsoft.tech' },
-      { desc: 'Our internal lab: automated AI video runs, dynamic PDF template engines, creative image/video editing, and workflow glue.', url: '' }
+      { desc: 'Travel that feels exciting before departure.', brief: 'Make tours easy to explore and enquiries easy to start.', build: 'Destination pages, trip details, and direct WhatsApp planning.', image: 'assets/clients/vandana-mobile.jpg', url: 'https://shreevandanatoursandtravels.com' },
+      { desc: 'One product. A clear path to purchase.', brief: 'Explain a detailed wellness formula without losing the buyer.', build: 'Product storytelling, ingredient detail, and a focused storefront.', image: 'assets/clients/inovexa-mobile.jpg', url: 'https://inovexaaa.vercel.app' },
+      { desc: 'Demand generation with a sharper point of view.', brief: 'Make the offer clear and the strategy call worth taking.', build: 'Service paths, case-study routes, and a direct call to action.', image: 'assets/clients/twodots-mobile.jpg', url: 'https://stagging.twodotsmedia.in' },
+      { desc: 'Engineering expertise, clearly presented.', brief: 'Help clients navigate BIM and engineering services.', build: 'Division gateway, service paths, projects, and direct enquiries.', image: 'assets/clients/vadsoft-mobile.jpg', url: 'https://vadsoft.tech' },
+      { desc: 'A clear digital home for design and build.', brief: 'Make the construction offer easy to understand.', build: 'Project-led pages, service routes, and a direct enquiry path.', image: 'assets/clients/build-mobile.jpg', url: 'https://build.vadsoft.tech' },
+      { desc: 'The studio’s space for useful experiments.', brief: 'Explore repeatable ways to make creative production faster.', build: 'AI video workflows, dynamic PDF production, media editing, and automation prototypes.', image: '', url: '' }
     ];
     const dialog = document.createElement('dialog');
     dialog.className = 'work-dialog';
-    dialog.innerHTML = '<button type="button" class="work-dialog-close" aria-label="Close project details">Close</button><p class="work-dialog-type"></p><h2></h2><p class="work-dialog-description"></p><a class="work-dialog-link" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>';
+    dialog.innerHTML = '<button type="button" class="work-dialog-close" aria-label="Close project details">Close</button><div class="work-dialog-layout"><div class="work-dialog-visual"><img class="work-dialog-image" alt="" loading="lazy"></div><div class="work-dialog-copy"><div class="work-dialog-kicker"><span class="work-dialog-index"></span><p class="work-dialog-type"></p></div><h2 id="work-dialog-title"></h2><p class="work-dialog-description" id="work-dialog-description"></p><div class="work-dialog-facts"><div><small>The brief</small><p class="work-dialog-brief"></p></div><div><small>The build</small><p class="work-dialog-build"></p></div></div></div></div><a class="work-dialog-link" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>';
+    dialog.setAttribute('aria-labelledby', 'work-dialog-title');
+    dialog.setAttribute('aria-describedby', 'work-dialog-description');
     work.append(dialog);
     dialog.querySelector('button').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
@@ -104,16 +107,23 @@
       dialog.querySelector('h2').textContent = cards[index].querySelector('footer strong').textContent;
       dialog.querySelector('.work-dialog-type').textContent = cards[index].querySelector('footer span:last-child').textContent;
       dialog.querySelector('.work-dialog-description').textContent = p.desc;
+      dialog.querySelector('.work-dialog-brief').textContent = p.brief;
+      dialog.querySelector('.work-dialog-build').textContent = p.build;
+      const image = dialog.querySelector('.work-dialog-image');
+      dialog.classList.toggle('no-preview', !p.image);
+      dialog.querySelector('.work-dialog-index').textContent = ['I','II','III','IV','V','VI'][index] + ' / VI';
+      if (p.image) { image.src = p.image; image.alt = cards[index].querySelector('footer strong').textContent + ' website preview'; image.hidden = false; }
+      else { image.removeAttribute('src'); image.hidden = true; }
       const link = dialog.querySelector('.work-dialog-link');
       if (p.url) { link.href = p.url; link.style.display = 'inline-block'; } else { link.removeAttribute('href'); link.style.display = 'none'; }
       dialog.showModal();
     }
     workStage.addEventListener('click', event => {
       const card = event.target.closest('.work-card');
-      if (card && card === cards[Number(document.querySelector('.work-count strong').textContent) - 1]) openProject(cards.indexOf(card));
+      if (card) { window.setWorkActive(cards.indexOf(card)); openProject(cards.indexOf(card)); }
     }, true);
     workStage.addEventListener('keydown', event => {
-      if (event.key === 'Enter' && document.activeElement.matches('.work-card')) {
+      if ((event.key === 'Enter' || event.key === ' ') && document.activeElement.matches('.work-card')) {
         event.preventDefault(); openProject(cards.indexOf(document.activeElement));
       }
     });

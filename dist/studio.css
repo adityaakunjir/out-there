@@ -1,31 +1,260 @@
-.ot-gallery{width:100%;position:relative;margin:4rem auto 0;max-width:1300px}
-.ot-stage{height:min(46vw,480px);min-height:400px;position:relative;perspective:1100px;overflow:hidden;touch-action:pan-y;cursor:grab}
-.ot-stage.ot-held{cursor:grabbing}
-.ot-slide{position:absolute;left:50%;top:43%;width:clamp(210px,22vw,310px);margin:0;transform-style:preserve-3d;backface-visibility:hidden;transition:filter .2s,opacity .2s;user-select:none}
-.ot-slide img{display:block;width:100%;height:clamp(230px,26vw,345px);object-fit:cover;border-radius:3px;pointer-events:none}
-.ot-slide figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:15px;transition:opacity .25s ease}
-@media(max-width:799px){.ot-slide:not(.ot-centre) figcaption{opacity:0;pointer-events:none}}
-.ot-slide figcaption strong{font-size:1.25rem}
-.ot-slide figcaption small{font:12px var(--mono);color:#999}
-.ot-controls{display:flex;justify-content:center;align-items:center;gap:24px;font:12px var(--mono);text-transform:uppercase;min-height:54px}
-.ot-controls button{width:42px;height:42px;border-radius:50%;border:1px solid #777;background:transparent;color:var(--paper);font-size:24px;cursor:pointer}
-.ot-controls button:hover,.ot-controls button:focus-visible{background:var(--paper);color:#111}
-.ot-collection{padding:10vh 3.2vw 14vh;background:#111;color:var(--paper);overflow:hidden}
-.ot-collection header{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2rem;align-items:start}
-.ot-collection header span{font:12px var(--mono);text-transform:uppercase;color:var(--red)}
-.ot-collection header h2{font-size:clamp(3rem,7vw,7rem);line-height:.92;letter-spacing:-.07em;margin:0}
-.ot-collection header p{max-width:24ch;color:#aaa}
-.ot-cylinder .ot-slide{width:clamp(190px,22vw,310px)}
-.ot-cylinder .ot-slide img{height:clamp(280px,33vw,430px)}
-.studio{min-height:0}
-@media(max-width:700px){
-  .ot-stage{height:385px;min-height:0}
-  .ot-slide,.ot-cylinder .ot-slide{top:41%;width:min(60vw,245px)}
-  .ot-slide img,.ot-cylinder .ot-slide img{height:255px}
-  .ot-collection header{display:block}
-  .ot-collection header h2{margin:1rem 0}
-  .ot-collection header p{font-size:1rem}
-  .ot-controls{gap:15px}
+.ot-gallery {
+  width: 100%;
+  position: relative;
+  margin: 4rem auto 0;
+  max-width: 1300px
 }
 
 .contact{position:relative;isolation:isolate;overflow:hidden;background:#0e0e0e!important;color:#f1f0eb!important;align-items:center;text-align:center}.contact>span{color:var(--red);text-decoration:line-through}.contact h2{color:#f1f0eb;margin:24px 0 32px}.contact-row{display:flex;flex-direction:column;align-items:center;gap:22px}.contact-card{max-width:none;justify-content:center}.contact-card b{background:var(--red);color:#f1f0eb}.contact-card p{background:#161616;border:1px solid #2c2c2c;color:#f1f0eb}.contact-mail{color:#9a9995;border-color:#444}.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;align-items:center}.contact-wa{color:#e5e2dc;border-color:#555}.ot-type-field{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.ot-type-field b{position:absolute;white-space:nowrap;font:900 clamp(1.5rem,4vw,4.5rem)/1 var(--sans);letter-spacing:-.07em;color:#282828;opacity:.22;transform:translate(calc(var(--local-x,0px) + var(--scroll-x,0px)),calc(var(--local-y,0px) + var(--scroll-y,0px))) rotate(var(--turn));transition:transform .18s ease}.contact-button{position:relative;display:grid;place-items:center;min-width:176px;min-height:54px;background:transparent!important;padding:0!important}.contact-button-face{display:grid;place-items:center;min-width:176px;min-height:54px;padding:16px 28px;border-radius:99px;background:#f1f0eb;color:#111;font-weight:600;transform:translate(var(--mx,0px),var(--my,0px));transition:transform .18s ease,background .2s,color .2s}.contact-button:hover .contact-button-face,.contact-button:focus-visible .contact-button-face{background:#fff;color:#000}
+
+.ot-stage.ot-held {
+  cursor: grabbing
+}
+
+.ot-slide {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  width: clamp(210px, 22vw, 310px);
+  margin: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: filter .2s, opacity .2s;
+  user-select: none
+}
+
+.ot-slide img {
+  display: block;
+  width: 100%;
+  height: clamp(230px, 26vw, 345px);
+  object-fit: cover;
+  border-radius: 3px;
+  pointer-events: none
+}
+
+.ot-slide figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+  transition: opacity .25s ease
+}
+
+@media(max-width:799px) {
+  .ot-slide:not(.ot-centre) figcaption {
+    opacity: 0;
+    pointer-events: none
+  }
+}
+
+.ot-slide figcaption strong {
+  font-size: 1.25rem
+}
+
+.ot-slide figcaption small {
+  font: 12px var(--mono);
+  color: #999
+}
+
+.ot-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  font: 12px var(--mono);
+  text-transform: uppercase;
+  min-height: 54px
+}
+
+.ot-controls button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #777;
+  background: transparent;
+  color: var(--paper);
+  font-size: 24px;
+  cursor: pointer
+}
+
+.ot-controls button:hover,
+.ot-controls button:focus-visible {
+  background: var(--paper);
+  color: #111
+}
+
+.ot-collection {
+  padding: 10vh 3.2vw 14vh;
+  background: #111;
+  color: var(--paper);
+  overflow: hidden
+}
+
+.ot-collection header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  align-items: start
+}
+
+.ot-collection header span {
+  font: 12px var(--mono);
+  text-transform: uppercase;
+  color: var(--red)
+}
+
+.ot-collection header h2 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: .92;
+  letter-spacing: -.07em;
+  margin: 0
+}
+
+.ot-collection header p {
+  max-width: 24ch;
+  color: #aaa
+}
+
+.ot-cylinder .ot-slide {
+  width: clamp(190px, 22vw, 310px)
+}
+
+.ot-cylinder .ot-slide img {
+  height: clamp(280px, 33vw, 430px)
+}
+
+.studio {
+  min-height: 0
+}
+
+@media(max-width:700px) {
+  .ot-stage {
+    height: 385px;
+    min-height: 0
+  }
+
+  .ot-slide,
+  .ot-cylinder .ot-slide {
+    top: 41%;
+    width: min(60vw, 245px)
+  }
+
+  .ot-slide img,
+  .ot-cylinder .ot-slide img {
+    height: 255px
+  }
+
+  .ot-collection header {
+    display: block
+  }
+
+  .ot-collection header h2 {
+    margin: 1rem 0
+  }
+
+  .ot-collection header p {
+    font-size: 1rem
+  }
+
+  .ot-controls {
+    gap: 15px
+  }
+}
+
+.contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0e0e0e !important;
+  color: #f1f0eb !important;
+  align-items: center;
+  text-align: center
+}
+
+.contact>span {
+  color: var(--red);
+  text-decoration: line-through
+}
+
+.contact h2 {
+  color: #f1f0eb;
+  margin: 24px 0 32px
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px
+}
+
+.contact-card {
+  max-width: none;
+  justify-content: center
+}
+
+.contact-card b {
+  background: var(--red);
+  color: #f1f0eb
+}
+
+.contact-card p {
+  background: #161616;
+  border: 1px solid #2c2c2c;
+  color: #f1f0eb
+}
+
+.contact-mail {
+  color: #9a9995;
+  border-color: #444
+}
+
+.ot-type-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden
+}
+
+.ot-type-field b {
+  position: absolute;
+  white-space: nowrap;
+  font: 900 clamp(1.5rem, 4vw, 4.5rem)/1 var(--sans);
+  letter-spacing: -.07em;
+  color: #282828;
+  opacity: .22;
+  transform: translate(calc(var(--local-x, 0px) + var(--scroll-x, 0px)), calc(var(--local-y, 0px) + var(--scroll-y, 0px))) rotate(var(--turn));
+  transition: transform .18s ease
+}
+
+.contact-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 176px;
+  min-height: 54px;
+  background: transparent !important;
+  padding: 0 !important
+}
+
+.contact-button-face {
+  display: grid;
+  place-items: center;
+  min-width: 176px;
+  min-height: 54px;
+  padding: 16px 28px;
+  border-radius: 99px;
+  background: #f1f0eb;
+  color: #111;
+  font-weight: 600;
+  transform: translate(var(--mx, 0px), var(--my, 0px));
+  transition: transform .18s ease, background .2s, color .2s
+}
+
+.contact-button:hover .contact-button-face,
+.contact-button:focus-visible .contact-button-face {
+  background: #fff;
+  color: #000
+}
