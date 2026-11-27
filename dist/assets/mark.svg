@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Out There mark">
+  <rect width="512" height="512" rx="92" fill="#171717"/>
+  <circle cx="244" cy="256" r="126" fill="none" stroke="#F4F1EA" stroke-width="58"/>
+  <circle cx="391" cy="131" r="32" fill="#3E5BFF"/>
+</svg>
