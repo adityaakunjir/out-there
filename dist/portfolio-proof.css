@@ -1,5 +1,5 @@
 .hero .collage {
-  inset: 24% 15% 39%;
+  inset: 28% 15% 34%;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-template-rows: 1fr;
   gap: 1.1vw;
@@ -66,28 +66,30 @@
 
 .hero-pitch strong {
   display: block;
-  font-size: clamp(1.35rem, 2.5vw, 2.4rem);
-  line-height: 1.08;
-  letter-spacing: -.045em;
+  color: #dad7d0;
+  font-size: clamp(1rem, 1.45vw, 1.32rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -.025em;
 }
 
 .hero-pitch div {
   display: flex;
   gap: 9px;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .hero-pitch a {
   display: inline-flex;
   align-items: center;
-  min-height: 43px;
-  padding: 10px 16px;
+  min-height: 38px;
+  padding: 9px 15px;
   border: 1px solid #f1f0eb;
   border-radius: 99px;
   background: #f1f0eb;
   color: #111;
   text-shadow: none;
-  font: 600 .68rem var(--mono);
+  font: 600 .66rem var(--mono);
   transition: background .2s, color .2s, transform .2s;
 }
 
@@ -438,7 +440,7 @@
 
 @media (max-width: 900px) {
   .hero .collage {
-    inset: 30% 7% 41%;
+    inset: 33% 7% 37%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 9px;
   }
@@ -465,7 +467,7 @@
 
 @media (max-width: 700px) {
   .hero .collage {
-    inset: 32% 5% 40%;
+    inset: 34% 5% 37%;
     gap: 7px;
   }
 
@@ -635,7 +637,8 @@
   }
 
   .hero-pitch strong {
-    font-size: 1.13rem;
+    font-size: .95rem;
+    line-height: 1.28;
   }
 
   .hero-pitch div {
