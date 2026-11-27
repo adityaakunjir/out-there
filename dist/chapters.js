@@ -85,24 +85,27 @@
       card.addEventListener('focus', () => window.setWorkActive(i));
     });
 
-    const descriptions = [
-      'A travel website exploring destination discovery and booking journeys.',
-      'A storefront designed around a focused everyday wellness product.',
-      'An experimental training ground within Out There’s cinematic website.',
-      'Original concept study of practical digital product systems and clear interface patterns.',
-      'Original form and material exploration created for this portfolio.',
-      'Original grid and typography exploration created for this portfolio.'
+    const projects = [
+      { desc: 'Travel discovery and booking website designed and built for Shree Vandana Tours & Travels.', url: 'https://shreevandanatoursandtravels.com' },
+      { desc: 'Modern wellness storefront designed and shipped for Inovexa.', url: 'https://inovexaaa.vercel.app' },
+      { desc: 'Interactive agency website engineered for Two Dots Media.', url: 'https://stagging.twodotsmedia.in' },
+      { desc: 'Technology studio website designed and developed for Vadsoft.', url: 'https://vadsoft.tech' },
+      { desc: 'Product & builder platform web experience shipped for Build by Vadsoft.', url: 'https://build.vadsoft.tech' },
+      { desc: 'In-house R&D: AI video generation workflows, automated PDF template pipelines, and creative media editing.', url: '' }
     ];
     const dialog = document.createElement('dialog');
     dialog.className = 'work-dialog';
-    dialog.innerHTML = '<button type="button" class="work-dialog-close" aria-label="Close project details">Close</button><p class="work-dialog-type"></p><h2></h2><p class="work-dialog-description"></p>';
+    dialog.innerHTML = '<button type="button" class="work-dialog-close" aria-label="Close project details">Close</button><p class="work-dialog-type"></p><h2></h2><p class="work-dialog-description"></p><a class="work-dialog-link" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>';
     work.append(dialog);
     dialog.querySelector('button').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
     function openProject(index) {
+      const p = projects[index];
       dialog.querySelector('h2').textContent = cards[index].querySelector('footer strong').textContent;
       dialog.querySelector('.work-dialog-type').textContent = cards[index].querySelector('footer span:last-child').textContent;
-      dialog.querySelector('.work-dialog-description').textContent = descriptions[index];
+      dialog.querySelector('.work-dialog-description').textContent = p.desc;
+      const link = dialog.querySelector('.work-dialog-link');
+      if (p.url) { link.href = p.url; link.style.display = 'inline-block'; } else { link.removeAttribute('href'); link.style.display = 'none'; }
       dialog.showModal();
     }
     workStage.addEventListener('click', event => {
