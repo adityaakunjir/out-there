@@ -86,12 +86,12 @@
     });
 
     const projects = [
-      { desc: 'Travel discovery and booking website designed and built for Shree Vandana Tours & Travels.', url: 'https://shreevandanatoursandtravels.com' },
-      { desc: 'Modern wellness storefront designed and shipped for Inovexa.', url: 'https://inovexaaa.vercel.app' },
-      { desc: 'Interactive agency website engineered for Two Dots Media.', url: 'https://stagging.twodotsmedia.in' },
-      { desc: 'Technology studio website designed and developed for Vadsoft.', url: 'https://vadsoft.tech' },
-      { desc: 'Product & builder platform web experience shipped for Build by Vadsoft.', url: 'https://build.vadsoft.tech' },
-      { desc: 'In-house R&D: AI video generation workflows, automated PDF template pipelines, and creative media editing.', url: '' }
+      { desc: 'Travel discovery and booking website designed and built for Shree Vandana Tours & Travels—giving their customers a fast, clear way to explore packages and enquire directly.', url: 'https://shreevandanatoursandtravels.com' },
+      { desc: 'Modern wellness storefront designed and shipped for Inovexa—built around clean product storytelling, mobile speed, and frictionless browsing.', url: 'https://inovexaaa.vercel.app' },
+      { desc: 'Interactive agency website engineered for Two Dots Media—crafted to showcase their creative work with sharp typography and smooth motion.', url: 'https://stagging.twodotsmedia.in' },
+      { desc: 'Technology studio website designed and developed for Vadsoft—positioning their engineering capabilities with clear hierarchy and a fast, responsive build.', url: 'https://vadsoft.tech' },
+      { desc: 'Product and builder platform web experience shipped for Build by Vadsoft—structured for clarity, trust, and strong organic search foundations.', url: 'https://build.vadsoft.tech' },
+      { desc: 'In-house R&D: AI video generation workflows, automated PDF template pipelines, creative image/video editing, and custom business automations.', url: '' }
     ];
     const dialog = document.createElement('dialog');
     dialog.className = 'work-dialog';
